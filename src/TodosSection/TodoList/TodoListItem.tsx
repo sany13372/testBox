@@ -18,6 +18,8 @@ const styles = {
     },
     text: (completed: boolean) => ({
         textDecoration: completed ? 'line-through' : 'none',
+        textOverflow: 'ellipsis',
+        overflow:'hidden'
     }),
 };
 const TodoListItem: FC<ITodoListItem> = ({ item }) => {
@@ -35,7 +37,7 @@ const TodoListItem: FC<ITodoListItem> = ({ item }) => {
                     onChange={handleChange}
                     inputProps={{ 'aria-label': 'controlled' }}
                 />
-                <Typography variant="h5" component="div" sx={styles.text(item.completed)}>
+                <Typography variant="h6" component="div" sx={styles.text(item.completed)}>
                     {item.name}
                 </Typography>
             </Box>
